@@ -1,6 +1,7 @@
 /* Patternfly CSS places a "bg-login.jpg" as the background on this ".login-pf" class.
    This clashes with the "keycloak-bg.png' background defined on the body below.
    Therefore the Patternfly background must be set to none. */
+
 .login-pf {
     background: none;
 }
@@ -399,6 +400,7 @@ ul#kc-totp-supported-apps {
         padding: 20px 60px 0 0;
         color: #72767b;
         letter-spacing: 0;
+  
     }
 
     div.kc-logo-text {
@@ -516,8 +518,9 @@ ul#kc-totp-supported-apps {
     box-shadow: var(--pf-global--BoxShadow--lg);
     padding: 0 20px;
     max-width: 500px;
-    border-top: 4px solid;
-    border-color: var(--pf-global--primary-color--100);
+    /* border-top: 4px solid; */
+    /* border-color: var(--pf-global--primary-color--100); */
+    border-radius: 32px;
 }
 
 /*phone*/
@@ -627,3 +630,27 @@ ul#kc-totp-supported-apps {
     overflow-wrap: break-word
 }
 /* End Recovery codes */
+
+.header-custom-class {
+    width: 100%;
+    text-align: start;
+}
+
+.gradient-text {
+    background: linear-gradient(272.1deg, #9747FF 4.32%, #E63C2E 50.27%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login_text_custom {
+    font-family: Inter;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 84px;
+    width: 100%;
+    text-align: start;
+}
+
+.custom_logo {
+    margin-bottom: 30px;
+}

@@ -3,9 +3,24 @@
 <#assign usernameHidden = true />
 
 
-<@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
-    <#if section = "header">
-        ${msg("loginAccountTitle")}
+<@layout.registrationLayout  displayMessage=!messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
+    <#if section = "header" >
+
+    <div class=${properties.kcHeaderCustomClass!}>
+<img src="${url.resourcesPath}/img/arimac_logo.png" class="custom_logo"/>
+         
+    </div>
+
+    <div class=${properties.kcHeaderCustomClass!}>
+        ${msg("loginAccountTitleStart")} <span class="gradient-text">arimac.digital</span>
+
+    </div>
+     <div class=${properties.kcHeaderCustomClass!}>
+        <span class="login_text_custom">Log in</span>
+    </div>
+  
+   
+  
     <#elseif section = "form">
         <div id="kc-form">
           <div id="kc-form-wrapper">
@@ -43,32 +58,7 @@
                         </div>
                     </#if>
 
-                    <div class="${properties.kcFormGroupClass!}">
-                        <!-- <label for="password" class="${properties.kcLabelClass!}">
-                            <span class="pf-v5-c-form__label-text">${msg("password")}</span>
-                        </label> -->
-
-                        <div class="${properties.kcInputGroup!}">
-                            <span class="${properties.kcInputClass!}">
-                                <input tabindex="2" id="password" placeholder="${msg('password')}" name="password" type="password" autocomplete="off"
-                                       aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
-                                />
-                            </span>
-                            <!-- <button class="${properties.kcFormPasswordVisibilityButtonClass!}" type="button" aria-label="${msg('showPassword')}"
-                                    aria-controls="password" data-password-toggle
-                                    data-icon-show="${properties.kcFormPasswordVisibilityIconShow!}" data-icon-hide="${properties.kcFormPasswordVisibilityIconHide!}"
-                                    data-label-show="${msg('showPassword')}" data-label-hide="${msg('hidePassword')}">
-                                <i class="${properties.kcFormPasswordVisibilityIconShow!}" aria-hidden="true"></i>
-                            </button> -->
-                        </div>
-
-                        <#if usernameHidden?? && messagesPerField.existsError('username','password')>
-                            <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
-                            </span>
-                        </#if>
-
-                    </div>
+                   
 
                     <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
                         <div id="kc-form-options">
